@@ -3,19 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iwantgohome</title>
+    <title>iwantgohomesweethome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/assets/icons8-집-69.png" />
+
     <script>
-      alert('오늘은 9시에 집에 갈 수 있어요~');
+      // 랜덤 팝업 메시지 배열
+      const messages = [
+        '오늘은 9시에 집에 갈 수 있어요~',
+        '집 가고 싶죠? 저도요...',
+        '더 간절히 집에 가고 싶어 해 봅시다',
+        '오늘은 집에 일찍 갈 수도..?',
+        '오늘은 밤 샘 각',
+      ];
+
+      // 배열에서 랜덤한 메시지 선택
+      const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)];
+
+      // 1초 후에 알림 표시
+      setTimeout(() => {
+        alert(randomMessage);
+      }, 1000);
     </script>
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
     <h1>iwantgoHOME</h1>
+
     <h2>
-      <ul>
+      <div>
         <a class="board" href="text.html">家[집 가]자</a>
         <a class="board" href="webcam.html">[어디로든 문]</a>
-      </ul>
+      </div>
     </h2>
     <div class="marquee">
       <div class="track">
@@ -29,6 +54,15 @@
           집가고싶다 • ほんとうに집가고싶다 • 집가고싶다 •
         </p>
       </div>
+    </div>
+    <div class="home-container">
+      <input
+        type="text"
+        id="home-input"
+        placeholder="집에 대한 열망을 말해보세요..."
+        maxlength="50"
+      />
+      <button id="home-button">송신</button>
     </div>
   </body>
 </html>
