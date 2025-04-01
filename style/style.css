@@ -28,11 +28,13 @@ h2 {
 h1 {
   top: 1.25rem;
   font-size: 1.125rem;
+  text-align: center;
   font-weight: bold;
 }
 
 h2 {
   top: 3.125rem;
+  text-align: center;
 }
 
 .marquee {
@@ -46,6 +48,9 @@ h2 {
   overflow-x: hidden;
   font-size: 16px;
   z-index: 99;
+}
+.board {
+  cursor: pointer;
 }
 
 .track {
