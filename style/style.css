@@ -94,7 +94,7 @@ p {
 
 #home-input {
   width: 300px;
-  height: 30px;
+  height: 28px;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid black;
@@ -104,8 +104,8 @@ p {
 }
 
 #home-button {
-  height: 30px;
+  height: 28px;
   padding: 5px 5px;
-  transition: 0.3s;
+  transition: 0s;
   white-space: nowrap;
 }
