@@ -13,24 +13,110 @@
     <link rel="icon" href="/assets/icons8-집-69.png" />
 
     <script>
-      // 랜덤 팝업 메시지 배열
       const messages = [
         '오늘은 9시에 집에 갈 수 있어요~',
         '집 가고 싶죠? 저도요...',
         '더 간절히 집에 가고 싶어 해 봅시다',
-        '오늘은 집에 일찍 갈 수도..?',
-        '오늘은 밤 샘 각',
+        '오늘은 일찍 집에 갈 수도..?',
+        '오늘은 밤.샘.각',
       ];
 
-      // 배열에서 랜덤한 메시지 선택
       const randomMessage =
         messages[Math.floor(Math.random() * messages.length)];
-
-      // 1초 후에 알림 표시
       setTimeout(() => {
         alert(randomMessage);
-      }, 1000);
+      }, 500);
     </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const homeButton = document.getElementById('home-button');
+        const homeInput = document.getElementById('home-input');
+        const floatingContainer = document.getElementById('floating-messages');
+
+        let savedMessages =
+          JSON.parse(localStorage.getItem('floatingMessages')) || [];
+
+        function createMessage(text, x = null, y = null) {
+          const message = document.createElement('div');
+          message.classList.add('floating-message');
+          message.innerText = text;
+
+          const left = x !== null ? x : Math.random() * 80 + 10 + 'vw';
+          const top = y !== null ? y : Math.random() * 70 + 10 + 'vh';
+
+          message.style.left = typeof left === 'number' ? `${left}px` : left;
+          message.style.top = typeof top === 'number' ? `${top}px` : top;
+
+          // 랜덤 크기 효과
+          const scale = Math.random() * 0.5 + 0.75;
+          message.style.transform = `scale(${scale})`;
+
+          // 랜덤 애니메이션 속도
+          message.style.animationDuration = Math.random() * 10 + 10 + 's';
+
+          // 드래그 가능
+          makeDraggable(message, text);
+
+          floatingContainer.appendChild(message);
+        }
+
+        function saveMessages() {
+          const all = [...document.querySelectorAll('.floating-message')].map(
+            (el) => ({
+              text: el.innerText,
+              left: el.offsetLeft,
+              top: el.offsetTop,
+            })
+          );
+          localStorage.setItem('floatingMessages', JSON.stringify(all));
+        }
+
+        homeButton.addEventListener('click', () => {
+          const text = homeInput.value.trim();
+          if (!text) return;
+          createMessage(text);
+          savedMessages.push({ text });
+          saveMessages();
+          homeInput.value = '';
+        });
+
+        function makeDraggable(element, text) {
+          let isDragging = false;
+          let offsetX, offsetY;
+
+          element.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - element.getBoundingClientRect().left;
+            offsetY = e.clientY - element.getBoundingClientRect().top;
+            element.style.animationPlayState = 'paused';
+            element.style.zIndex = 1000;
+          });
+
+          document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
+          });
+
+          document.addEventListener('mouseup', () => {
+            if (isDragging) {
+              isDragging = false;
+              element.style.animationPlayState = 'running';
+              saveMessages();
+            }
+          });
+        }
+
+        // 초기 로드된 메시지 다시 그리기
+        savedMessages.forEach((msg) => {
+          createMessage(msg.text, msg.left, msg.top);
+        });
+      });
+    </script>
+
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
@@ -38,8 +124,8 @@
 
     <h2>
       <div>
-        <a class="board" href="text.html">家[집 가]자</a>
-        <a class="board" href="webcam.html">[어디로든 문]</a>
+        <a class="board" href="">家[집 가]자</a>
+        <a class="board" href="">[어디로든 문]</a>
       </div>
     </h2>
     <div class="marquee">
@@ -64,5 +150,6 @@
       />
       <button id="home-button">전송</button>
     </div>
+    <div id="floating-messages"></div>
   </body>
 </html>

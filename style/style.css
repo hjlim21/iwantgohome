@@ -109,3 +109,59 @@ p {
   transition: 0s;
   white-space: nowrap;
 }
+
+#floating-messages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.floating-message {
+  position: absolute;
+  font-size: 0.8rem;
+  text-align: center;
+  color: white;
+  background-color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: floatAround linear infinite;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+@keyframes floatAround {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-30px, -50px) scale(1.05);
+  }
+  50% {
+    transform: translate(40px, 30px) scale(1);
+  }
+  75% {
+    transform: translate(-20px, 50px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, -0px) scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
