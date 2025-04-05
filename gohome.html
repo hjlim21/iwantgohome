@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const homeButton = document.getElementById('home-button');
+        const homeInput = document.getElementById('home-input');
+        const floatingContainer = document.getElementById('floating-messages');
+
+        let savedMessages =
+          JSON.parse(localStorage.getItem('floatingMessages')) || [];
+
+        function createMessage(text, x = null, y = null) {
+          const message = document.createElement('div');
+          message.classList.add('floating-message');
+          message.innerText = text;
+
+          const left = x !== null ? x : Math.random() * 80 + 10 + 'vw';
+          const top = y !== null ? y : Math.random() * 70 + 10 + 'vh';
+
+          message.style.left = typeof left === 'number' ? `${left}px` : left;
+          message.style.top = typeof top === 'number' ? `${top}px` : top;
+
+          // 랜덤 크기 효과
+          const scale = Math.random() * 0.5 + 0.75;
+          message.style.transform = `scale(${scale})`;
+
+          // 랜덤 애니메이션 속도
+          message.style.animationDuration = Math.random() * 10 + 10 + 's';
+
+          // 드래그 가능
+          makeDraggable(message, text);
+
+          floatingContainer.appendChild(message);
+        }
+
+        function saveMessages() {
+          const all = [...document.querySelectorAll('.floating-message')].map(
+            (el) => ({
+              text: el.innerText,
+              left: el.offsetLeft,
+              top: el.offsetTop,
+            })
+          );
+          localStorage.setItem('floatingMessages', JSON.stringify(all));
+        }
+
+        homeButton.addEventListener('click', () => {
+          const text = homeInput.value.trim();
+          if (!text) return;
+          createMessage(text);
+          savedMessages.push({ text });
+          saveMessages();
+          homeInput.value = '';
+        });
+
+        function makeDraggable(element, text) {
+          let isDragging = false;
+          let offsetX, offsetY;
+
+          element.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - element.getBoundingClientRect().left;
+            offsetY = e.clientY - element.getBoundingClientRect().top;
+            element.style.animationPlayState = 'paused';
+            element.style.zIndex = 1000;
+          });
+
+          document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
+          });
+
+          document.addEventListener('mouseup', () => {
+            if (isDragging) {
+              isDragging = false;
+              element.style.animationPlayState = 'running';
+              saveMessages();
+            }
+          });
+        }
+
+        // 초기 로드된 메시지 다시 그리기
+        savedMessages.forEach((msg) => {
+          createMessage(msg.text, msg.left, msg.top);
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="home-container">
+      <input
+        type="text"
+        id="home-input"
+        placeholder="집에 대한 열망을 말해보세요..."
+        maxlength="50"
+      />
+      <button id="home-button">전송</button>
+    </div>
+    <div id="floating-messages"></div>
+  </body>
+</html>
