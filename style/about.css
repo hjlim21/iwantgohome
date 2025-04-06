@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url(https://cur.cursors-4u.net/others/oth-7/oth667.cur), auto !important;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.about {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  opacity: 0.8;
+  background-color: black;
+  top: 0;
+  left: 0;
+}
+
+.center {
+  margin-top: 0.4375rem;
+  font-weight: 50rem;
+  color: white;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  unicode-bidi: isolate;
+}
+
+.intro {
+  margin-top: 1.875rem;
+}
