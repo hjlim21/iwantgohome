@@ -94,15 +94,19 @@
           });
         }
 
-        // 초기 로드된 메시지 다시 그리기
         savedMessages.forEach((msg) => {
           createMessage(msg.text, msg.left, msg.top);
         });
       });
     </script>
+
     <link rel="stylesheet" href="/style/style.css" />
   </head>
   <body>
+    <a href="/index.html" id="home-logo">
+      <img src="/assets/keypng.parspng.com-7.png" alt="Home" />
+    </a>
+
     <div class="home-container">
       <input
         type="text"

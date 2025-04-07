@@ -187,3 +187,26 @@ p {
     opacity: 0;
   }
 }
+
+#home-logo {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 1000;
+  width: 150px;
+  height: 150px;
+  opacity: 0.8;
+  transition: transform 0.3s ease-in-out;
+}
+
+#home-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+#home-logo:hover img {
+  transform: rotate(360deg);
+  opacity: 1;
+}
