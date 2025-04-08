@@ -19,7 +19,7 @@ body {
 
 p {
   margin-bottom: 0.3125rem;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .about {
@@ -45,4 +45,13 @@ p {
 .intro {
   margin-inline: 2.5rem;
   text-align: center;
+}
+
+.img {
+  position: fixed;
+  top: 55%;
+  right: 0%;
+  width: 250px; /* 원하는 크기로 조절 */
+  height: auto;
+  z-index: 100;
 }
