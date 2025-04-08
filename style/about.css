@@ -13,8 +13,13 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
+}
+
+p {
+  margin-bottom: 0.3125rem;
+  font-size: 14px;
 }
 
 .about {
@@ -38,5 +43,6 @@ body {
 }
 
 .intro {
-  margin-top: 1.875rem;
+  margin-inline: 2.5rem;
+  text-align: center;
 }

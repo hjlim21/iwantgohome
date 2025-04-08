@@ -18,6 +18,14 @@
         const homeInput = document.getElementById('home-input');
         const floatingContainer = document.getElementById('floating-messages');
 
+        // document
+        //   .getElementById('reset-button')
+        //   .addEventListener('click', () => {
+        //     localStorage.removeItem('floatingMessages');
+        //     const container = document.getElementById('floating-messages');
+        //     container.innerHTML = ''; // 화면에서도 메시지 삭제
+        //   });
+
         let savedMessages =
           JSON.parse(localStorage.getItem('floatingMessages')) || [];
 
@@ -115,6 +123,7 @@
         maxlength="50"
       />
       <button id="home-button">전송</button>
+      <!-- <button id="reset-button">메시지 리셋</button> -->
     </div>
     <div id="floating-messages"></div>
   </body>
