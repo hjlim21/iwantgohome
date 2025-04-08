@@ -63,6 +63,7 @@ h2 {
   cursor: pointer;
   text-decoration-line: none;
   color: black;
+  margin-bottom: 8px;
 }
 
 .board {
