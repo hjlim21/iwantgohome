@@ -58,8 +58,17 @@ h2 {
   font-size: 16px;
   z-index: 99;
 }
+
+.board1 {
+  cursor: pointer;
+  text-decoration-line: none;
+  color: black;
+}
+
 .board {
   cursor: pointer;
+  text-decoration-line: none;
+  color: rgb(80, 80, 80);
 }
 
 .track {
