@@ -20,6 +20,7 @@ body {
 p {
   margin-bottom: 0.3125rem;
   font-size: 15px;
+  font-weight: 600;
 }
 
 .about {
@@ -43,8 +44,8 @@ p {
 }
 
 .intro {
-  margin-inline: 2.5rem;
   text-align: center;
+  margin-inline: 2.5rem;
 }
 
 .img {
