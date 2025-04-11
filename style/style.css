@@ -131,7 +131,7 @@ p {
   text-align: center;
   align-items: center;
   display: flex;
-  gap: 50px;
+  gap: 15px;
 }
 
 #home-input {
