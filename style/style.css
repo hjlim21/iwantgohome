@@ -89,6 +89,16 @@ h2 {
   left: 0;
 }
 
+.playlist {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  opacity: 0.8;
+  background-color: black;
+  top: 0;
+  right: 0;
+}
+
 .center {
   margin-top: 5px;
   font-weight: bold;
