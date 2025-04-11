@@ -18,7 +18,7 @@ body {
 }
 
 a {
-  display: list-item;
+  display: inline-block;
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
   list-style: none;
@@ -36,7 +36,7 @@ h2 {
 
 h1 {
   top: 1.25rem;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
 }
@@ -63,6 +63,7 @@ h2 {
   cursor: pointer;
   text-decoration-line: none;
   color: black;
+  margin-top: 0.9375rem;
   margin-bottom: 8px;
 }
 
@@ -128,14 +129,15 @@ p {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  align-items: center;
   display: flex;
-  gap: 10px;
+  gap: 50px;
 }
 
 #home-input {
   width: 300px;
-  height: 28px;
-  padding: 10px;
+  height: 40px;
+  padding: 0 10px;
   font-size: 1rem;
   border: 1px solid white;
   color: black;
@@ -144,12 +146,14 @@ p {
 }
 
 #home-button {
-  height: 28px;
-  padding: 5px 5px;
-  border: 1px solid white;
+  height: 40px;
+  padding: 0 15px;
+  font-size: 1rem;
+  /* border: none;
   background-color: white;
-  transition: 0s;
-  white-space: nowrap;
+  color: black; */
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 #floating-messages {
@@ -177,6 +181,34 @@ p {
   cursor: grab;
   user-select: none;
   transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.corners {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 100;
+  text-decoration: underline;
+}
+
+.left-corner,
+.right-corner {
+  font-size: 0.9rem;
+}
+
+.left-corner {
+  text-align: left;
+  margin-bottom: 5rem;
+  margin-left: 9.375rem;
+}
+
+.right-corner {
+  text-align: right;
+  margin-bottom: 5rem;
+  margin-right: 9.375rem;
 }
 
 @keyframes floatAround {
@@ -229,4 +261,45 @@ p {
 #home-logo:hover img {
   transform: rotate(360deg);
   opacity: 1;
+}
+
+#reset-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: bottom;
+}
+
+#reset-button img {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#reset-button:hover img {
+  animation: shake 0.5s ease-in-out;
 }
