@@ -73,6 +73,13 @@
           homeInput.value = '';
         });
 
+        homeInput.addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            homeButton.click();
+          }
+        });
+
         function makeDraggable(element, text) {
           let isDragging = false;
           let offsetX, offsetY;

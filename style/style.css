@@ -42,7 +42,7 @@ h1 {
 }
 
 h2 {
-  top: 3.125rem;
+  top: 4.0625rem;
   text-align: center;
 }
 
@@ -63,8 +63,8 @@ h2 {
   cursor: pointer;
   text-decoration-line: none;
   color: black;
-  margin-top: 0.9375rem;
-  margin-bottom: 8px;
+  margin-block: 0.3125rem;
+  margin-inline: 0.1875rem;
 }
 
 .board {
