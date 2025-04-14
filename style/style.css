@@ -183,34 +183,6 @@ p {
   transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.corners {
-  position: fixed;
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 100;
-  text-decoration: underline;
-}
-
-.left-corner,
-.right-corner {
-  font-size: 0.9rem;
-}
-
-.left-corner {
-  text-align: left;
-  margin-bottom: 5rem;
-  margin-left: 9.375rem;
-}
-
-.right-corner {
-  text-align: right;
-  margin-bottom: 5rem;
-  margin-right: 9.375rem;
-}
-
 @keyframes floatAround {
   0% {
     transform: translate(0, 0) scale(1);
@@ -302,4 +274,16 @@ p {
 
 #reset-button:hover img {
   animation: shake 0.5s ease-in-out;
+}
+.links-container {
+  position: absolute; /* 위치를 절대적으로 설정 */
+  top: 100px; /* 원하는 위치로 이동 */
+  margin-top: 1rem; /* h2 아래 간격 */
+  text-align: center;
+}
+
+.links-container a {
+  display: block;
+  margin: 0.5rem; /* 링크 간격 */
+  color: black;
 }

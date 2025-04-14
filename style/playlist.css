@@ -23,6 +23,12 @@ p {
   font-weight: 600;
 }
 
+a {
+  margin-inline: 3.125rem;
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+}
+
 .about {
   width: 30px;
   height: 30px;
@@ -62,4 +68,23 @@ p {
   top: 10%;
   font-size: 18px;
   font-weight: 600;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+  margin-bottom: 18.75rem;
+  z-index: 10;
+}
+
+button {
+  padding: 30px 50px;
+  font-size: 18px;
+}
+
+button a {
+  text-decoration: none;
 }
