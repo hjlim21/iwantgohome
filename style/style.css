@@ -283,5 +283,5 @@ p {
 
 .about:hover {
   animation: shake 0.5s ease-in-out;
-  display: inline-block; /
+  display: inline-block;
 }
