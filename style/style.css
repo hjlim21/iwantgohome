@@ -276,14 +276,14 @@ p {
   animation: shake 0.5s ease-in-out;
 }
 .links-container {
-  position: absolute; /* 위치를 절대적으로 설정 */
-  top: 100px; /* 원하는 위치로 이동 */
-  margin-top: 1rem; /* h2 아래 간격 */
+  position: absolute;
+  top: 100px;
+  margin-top: 1rem;
   text-align: center;
 }
 
 .links-container a {
   display: block;
-  margin: 0.5rem; /* 링크 간격 */
+  margin: 0.5rem;
   color: black;
 }

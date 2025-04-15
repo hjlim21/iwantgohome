@@ -23,7 +23,7 @@
           .addEventListener('click', () => {
             localStorage.removeItem('floatingMessages');
             const container = document.getElementById('floating-messages');
-            container.innerHTML = ''; // 화면에서도 메시지 삭제
+            container.innerHTML = '';
           });
 
         let savedMessages =
@@ -40,14 +40,11 @@
           message.style.left = typeof left === 'number' ? `${left}px` : left;
           message.style.top = typeof top === 'number' ? `${top}px` : top;
 
-          // 랜덤 크기 효과
           const scale = Math.random() * 0.5 + 0.75;
           message.style.transform = `scale(${scale})`;
 
-          // 랜덤 애니메이션 속도
           message.style.animationDuration = Math.random() * 10 + 10 + 's';
 
-          // 드래그 가능
           makeDraggable(message, text);
 
           floatingContainer.appendChild(message);
