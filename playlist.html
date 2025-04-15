@@ -14,10 +14,6 @@
   </head>
   <body>
     <img src="assets/jam22.png" alt="" class="img" />
-    <a href="index.html">
-      <div class="about"><p class="center">⬅︎</p></div></a
-    >
-
     <div class="top">외출/귀가 플레이리스트</div>
     <div class="mid">모든 외향,내향인들의 외출과 귀갓길을 책임지는..</div>
 
@@ -51,5 +47,17 @@
         >
       </button>
     </div>
+    <script>
+      document.addEventListener('click', function (event) {
+        // "뒤로가기 버튼"인 .about 안을 클릭한 경우는 제외
+        const aboutBtn = document.querySelector('.about');
+        if (aboutBtn && aboutBtn.contains(event.target)) return;
+
+        // a 태그나 button 클릭한 것도 제외 (음악 링크 누를 때 방해 안 되게)
+        if (event.target.closest('a') || event.target.closest('button')) return;
+
+        history.back();
+      });
+    </script>
   </body>
 </html>

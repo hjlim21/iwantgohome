@@ -91,13 +91,11 @@ h2 {
 }
 
 .playlist {
-  width: 30px;
-  height: 30px;
-  position: fixed;
-  opacity: 0.8;
-  background-color: black;
-  top: 0;
-  right: 0;
+  font-size: 1.4375rem;
+  top: 100px;
+  text-align: center;
+  text-decoration-line: none;
+  padding-top: 0.75rem;
 }
 
 .center {
@@ -149,9 +147,6 @@ p {
   height: 40px;
   padding: 0 15px;
   font-size: 1rem;
-  /* border: none;
-  background-color: white;
-  color: black; */
   cursor: pointer;
   transition: 0.2s;
 }

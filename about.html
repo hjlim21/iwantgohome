@@ -15,9 +15,6 @@
   </head>
 
   <body>
-    <a href="index.html">
-      <div class="about"><p class="center">⬅︎</p></div></a
-    >
     <img src="assets/jam.png" alt="" class="img" />
     <div class="top">"집"이란 뭘까..?</div>
     <p class="intro"></p>
@@ -30,5 +27,17 @@
       마음껏 표현해도 괜찮홈니다. 나 자신에게 만큼은 솔집해져 봅시다. 그
       누구보다 나를 제일 잘 아는 사람은 바로 집이니깐요.
     </p>
+    <script>
+      document.addEventListener('click', function (event) {
+        // "뒤로가기 버튼"인 .about 안을 클릭한 경우는 제외
+        const aboutBtn = document.querySelector('.about');
+        if (aboutBtn && aboutBtn.contains(event.target)) return;
+
+        // a 태그나 button 클릭한 것도 제외 (음악 링크 누를 때 방해 안 되게)
+        if (event.target.closest('a') || event.target.closest('button')) return;
+
+        history.back();
+      });
+    </script>
   </body>
 </html>
