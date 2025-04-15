@@ -18,9 +18,8 @@ body {
 }
 
 p {
-  margin-bottom: 0.3125rem;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 a {
@@ -56,9 +55,9 @@ a {
 
 .img {
   position: fixed;
-  top: 55%;
-  left: 30%;
-  width: 250px;
+  top: 43%;
+  left: 13%;
+  width: 330px;
   height: auto;
   z-index: 100;
 }
@@ -70,21 +69,29 @@ a {
   font-weight: 600;
 }
 
+.mid {
+  position: fixed;
+  top: 15%;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .btn-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   max-width: 600px;
   margin-bottom: 18.75rem;
   z-index: 10;
 }
 
 button {
-  padding: 30px 50px;
-  font-size: 18px;
+  padding: 20px 40px;
+  font-size: 20px;
 }
 
 button a {
   text-decoration: none;
+  color: black;
 }
