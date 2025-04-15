@@ -81,13 +81,10 @@ h2 {
 }
 
 .about {
-  width: 30px;
-  height: 30px;
   position: fixed;
-  opacity: 0.8;
-  background-color: black;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  margin-bottom: 1.25rem;
+  text-decoration-line: none;
 }
 
 .playlist {
@@ -99,9 +96,10 @@ h2 {
 }
 
 .center {
-  margin-top: 5px;
-  font-weight: bold;
-  color: white;
+  margin-bottom: 1.875rem;
+  font-weight: 500;
+  font-size: 24px;
+  color: black;
   cursor: pointer;
   display: block;
   text-align: center;
@@ -281,4 +279,9 @@ p {
   display: block;
   margin: 0.5rem;
   color: black;
+}
+
+.about:hover {
+  animation: shake 0.5s ease-in-out;
+  display: inline-block; /
 }
