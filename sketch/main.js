@@ -79,6 +79,7 @@ function setColor(color) {
 function draw() {
   background('white');
   image(video, 0, 0, width, height); // 비디오를 캔버스 크기에 맞춰 그림
+  scale(-1, 1);
   video.size(640, 480);
   video.hide();
 
