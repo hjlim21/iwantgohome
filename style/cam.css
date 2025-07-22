@@ -53,6 +53,7 @@ ol {
   scrollbar-width: none;
   background-color: var(--info-section-bg);
 }
+
 .section-canvas {
   overflow-y: unset;
   background-color: var(--canvas-section-bg);

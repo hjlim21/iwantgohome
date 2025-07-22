@@ -45,7 +45,7 @@ function setup() {
 
   // createCanvas를 제외한 나머지 구문을 여기 혹은 init()에 작성.
   video = createCapture(VIDEO);
-  video.size(640, 480);
+  video.size(width, height);
   video.hide();
 
   handPose.detectStart(video, gotHands);
